@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>Coder</title>
+    <meta charset="utf-8">
+    <!-- Standard Coder Includes -->
+    <script>
+        var appname = "{{app_name}}"; //app name (id) of this app
+        var appurl = "{{&app_url}}";
+        var staticurl = "{{&static_url}}"; //base path to your static files /static/apps/yourapp
+        var socket_port = "{{socket_port}}";
+    </script>
+    <link href="/static/apps/coderlib/css/index.css" media="screen" rel="stylesheet" type="text/css"/>
+    <script src="/static/common/js/jquery.min.js"></script>
+    <script src="/static/common/ace-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/apps/coderlib/js/index.js"></script>
+    <!--script src="http://localhost:{{socket_port}}/socket.io/socket.io.js"></script-->
+    <script src="http://192.168.1.31:8082/socket.io/socket.io.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+    <script>
+        Coder.addBasicNav();
+    </script>
+    <!-- End Coder Includes -->
+
+    <!-- This app's includes -->
+    <link href="{{&static_url}}/css/index.css" media="screen" rel="stylesheet" type="text/css"/>
+    <script src="{{&static_url}}/js/index.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
+    <!-- End apps includes -->
+</head>
+<body class="">
+    <div class="pagecontent">
+        <h1>Give Five!</h1>
+        <p id="socketstatus">starting...</p>
+        <div id="sendbutton">push me</div>
+        <input id = "is_client" type = "checkbox">Ready for Five?</input>
+        <br>
+        <div id = "logger"></div>
+        <div id = "box"></div>
+        <img src="/static/apps/hometown_progress/media/Human-Hands-Front.png" id="front_hand">
+        <img src="/static/apps/hometown_progress/media/left_hand-second_user.png" id="back_hand">
+    </div>
+    <!-- splash screen -->
+     <div id ="splash" class= "overlay">
+         <h1>Give Five!</h1>
+          <img class= "circle" src="/static/apps/hometown_progress/media/Circle_Of_Hands_by_Circleoffriends.png">
+          <h2>High Fives are hard to come by these days </br> 
+            Find a Friend, Get a Phone, and Get Slappin'</h2>
+            
+          <input type="email" placeholder="Your Username">
+          <input type="submit" value="Start Application" <a href= "#" onclick= "document.getElementById('splash').style.display='none';return false;" id="close_splash"></a>
+          
+      </div> 
+    </body>
+
+</html>
